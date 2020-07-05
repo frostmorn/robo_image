@@ -8,7 +8,7 @@ image_list = []
 logger = telebot.logger
 telebot.logger.setLevel(logging.DEBUG) # Outputs debug messages to console.
 
-bot = telebot.TeleBot("1198843200:AAFVwO9B6bFR8GgeGTwnBdLYxbi5CxKwEss")
+bot = telebot.TeleBot() # Here you should insert telegram token of your app
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
