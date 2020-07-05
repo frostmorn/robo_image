@@ -114,11 +114,8 @@ def what_we_wanna_do(message, image, filename):
         sent = bot.reply_to(message, "Please select format u want to convert to", reply_markup=markup)
         bot.register_next_step_handler(sent , convert_to, image, filename)
     if message.text == "Upload to Imgur":
-
-
-    print(message)
-
-    pass
+	# TODO : Implement that
+    	pass
 
 @bot.message_handler(content_types=["document", "photo"])
 def doc_recieved(message):
@@ -150,6 +147,7 @@ def doc_recieved(message):
         bot.reply_to(message, "Processing error happened. Probably this file format not supported yet.")
         send_welcome(message)
         return
+
 while 1:
     try:
         bot.polling()
