@@ -56,7 +56,7 @@ def rotate_to(message, image, filename):
         send_welcome(message)
         return
     
-    image = image.rotate(int(rotate_to), expand=True)
+    image = image.rotate(int(rotate_to),resample=PIL.Image.BICUBIC, expand=True)
     imagebytes = io.BytesIO()
     image.save(imagebytes, format)
     imagebytes.name = filename
